@@ -16,7 +16,7 @@ import torchvision.utils as vutils
 from tqdm import tqdm as _tqdm
 import matplotlib.pyplot as plt
 
-from custom_dataset import CustomDataset, CustomDataset_Test
+from dataset_handler import CustomDataset, CustomDataset_Test
 from models import Unet3D, Unet3D_ViT, Unet3D_FiLM, Unet3D_ViT, Unet3D_ViT_FiLM, FiLMGeneratorModel
 from losses import MSE_loss, L1_loss, SSIM_loss
 
