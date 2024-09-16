@@ -14,7 +14,8 @@ import glob
 root_dir        = 'your/dir'
 mode            = 'train'          # Switch to: train, test, test_OOD, fine_tune_train, fine_tune_test, fine_tune_test_OOD
                                    # The "fine_tune_train" option fine-tunes a model that was originally trained using "train", 
-                                   # When fine-tuning an additional cascade is included to the original architecture.
+                                   # When fine-tuning an additional cascade is included in the original architecture.
+                                   # The OOD options are used to test the network for a different test dataset, outside-of-distribution of your standard test dataset. 
 # Architecture Inputs
 architecture    = 'TransUNet'  # UNet, TransUNet
 normalization   = 'FiLM'       # IN, FiLM
