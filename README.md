@@ -21,9 +21,9 @@ The code should also be compatible with later versions of these packages.
 - `models_module.py`: Implements a PyTorch Lightning module to build the model specified in `runner_DLEPT.py`. It includes functionality for generating predictions and saving results.
 - `models.py`: Contains all the neural network models (UNet, TransUNet, FiLM generator, etc.).
 - `losses.py`: Defines various loss functions used during training.
-- `canny_class.py`: A custom Canny filter implementation for generating 3D edge masks.
+- `edge_detector.py`: A custom Canny filter implementation for generating 3D edge masks.
 - `store_canny.py`: Calls `canny_class.py` to generate edge masks for a specified directory.
-- `custom_dataset.py`: Creates training, validation, and test datasets from two `.h5` files. It expects the following 3D tensors from the first file: `'mag_b1p'`, `'tpa_b1p'`, `'er'`, `'se'`, and `'edges'` from the second. All tensors must have the same dimensions.
+- `dataset_handler.py`: Creates training, validation, and test datasets from two `.h5` files. It expects the following 3D tensors from the first file: `'mag_b1p'`, `'tpa_b1p'`, `'er'`, `'se'`, and `'edges'` from the second. All tensors must have the same dimensions.
   - `'mag_b1p'`: B1+ magnitude
   - `'tpa_b1p'`: Transceive phase
   - `'er'`: Relative permittivity
