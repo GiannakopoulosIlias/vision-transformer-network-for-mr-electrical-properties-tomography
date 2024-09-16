@@ -23,12 +23,42 @@ The code should also be compatible with later versions of these packages.
 - `losses.py`: Defines various loss functions used during training.
 - `edge_detector.py`: A custom Canny filter implementation for generating 3D edge masks.
 - `store_canny.py`: Calls `canny_class.py` to generate edge masks for a specified directory.
-- `dataset_handler.py`: Creates training, validation, and test datasets from two `.h5` files. It expects the following 3D tensors from the first file: `'mag_b1p'`, `'tpa_b1p'`, `'er'`, `'se'`, and `'edges'` from the second. All tensors must have the same dimensions.
+- `dataset_handler.py`: Creates training, validation, and test datasets from two `.h5` files. It expects the following 3D tensors from the first file: `'mag_b1p'`, `'tpa_b1p'`, `'er'`, `'se'`, and `'edges'` from the second. All tensors must have the same dimensions and be real.
   - `'mag_b1p'`: B1+ magnitude
   - `'tpa_b1p'`: Transceive phase
   - `'er'`: Relative permittivity
   - `'se'`: Conductivity
   - `'edges'`: Canny edge masks
+
+## Root Directory
+Your root directory should be organized as follows:
+- Root_Dir
+  - data
+    - train
+      - afile_1.h5
+      - ...
+    - val
+      - bfile_1.h5
+      - ...
+    - test
+      - cfile_1.h5
+      - ...
+    - test_OOD
+      - dfile_1.h5
+      - ...
+    - train_fine_tune
+      - efile_1.h5
+      - ...
+    - val_fine_tune
+      - ffile_1.h5
+      - ...
+    - test_fine_tune
+      - gfile_1.h5
+      - ...
+    - test_fine_tune_OOD
+      - hfile_1.h5
+      - ...
+  - logs   
 
 ## Reference
 If you use this code in your research, please consider citing our upcoming article (reference will be added once published).
