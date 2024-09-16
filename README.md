@@ -66,3 +66,6 @@ If you use this code in your research, please consider citing our upcoming artic
 ## License
 This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/) - see the [LICENSE](LICENSE) file for details.
 
+## Graphical Abstract
+
+![Graphical Representation of the Training and Testing](https://github.com/GiannakopoulosIlias/vision-transformer-network-for-mr-electrical-properties-tomography/blob/main/figures/graphical_abstract.png)
