@@ -11,39 +11,41 @@ import math
 import glob
 
 # General Inputs
-root_dir        = '../dev/mylabspace/Ilias/GMT_data/data/Fast_EPR_Data/Simulated_Dataset/Birdcage_Coil_3T_3D/'
-mode            = 'test_OOD'          # train, test, test_OOD, fine_tune_train, fine_tune_test, fine_tune_test_OOD
-
+root_dir        = 'your/dir'
+mode            = 'train'          # Switch to: train, test, test_OOD, fine_tune_train, fine_tune_test, fine_tune_test_OOD
+                                   # The "fine_tune_train" option fine-tunes a model that was originally trained using "train", 
+                                   # When fine-tuning an additional cascade is included to the original architecture.
 # Architecture Inputs
-architecture    = 'TransUNet' # UNet, TransUNet
-normalization   = 'FiLM'   # IN, FiLM
-cascades        = 3
+architecture    = 'TransUNet'  # UNet, TransUNet
+normalization   = 'FiLM'       # IN, FiLM
+cascades        = 3            # Any number you want
 
 # Unet Inputs
-in_chans        = 3
-out_chans       = 2
-chans           = 64
-num_pool_layers = 2
-drop_prob       = 0.1
+in_chans        = 3           # Three inputs for the B1+, Transceive Phase, and Edge mask.
+out_chans       = 2           # Two outputs for relative permittivity and conductivity.
+chans           = 64          # Channels of the UNets
+num_pool_layers = 2           # Number of pooling layers per UNet
+drop_prob       = 0.1         # Dropout probability
 
-# Vision transformer Inputs
-num_heads       = 16
+# Vision transformer Inputs, Control the size of the transformer and should be adapted depending on the size of your network and the size of your data.
+num_heads       = 16 
 num_layers      = 6
 num_patches     = 1089
 
 # Training Inputs
-epochs             = 100
-epochs_fine_tune   = 100
-div_factor         = 100
-final_div_factor   = 1000
-lr                 = 0.01
-lr_fine_tune       = 0.003
-weight_decay       = 0
-gradient_clip_val  = 1.0
+epochs             = 100   # Number of Training epochs
+epochs_fine_tune   = 100   # Number of epochs for fine-tuning
+div_factor         = 100   # Controls the learning rate, according to the scheduler
+final_div_factor   = 1000  # Controls the learning rate, according to the scheduler
+lr                 = 0.01  # Initial Learning Rate
+lr_fine_tune       = 0.003 # Initial Learning Rate during fine-tuning
+weight_decay       = 0     # Weight decay
+gradient_clip_val  = 1.0   # Gradient Clip
 
-# Normalization Inputs
-norm_er = 135
-norm_se = 2.8
+# Normalization of the outputs. These are used so the network is trained with values between 0 and 1 and can be adjusted if needed. 
+# Remember to multiply the outputs with these values to get the true electrical properties
+norm_er = 135 # For relative permittivity
+norm_se = 2.8 # For conductivity
 
 # If fine tuning
 fine_tune_str  = ''
