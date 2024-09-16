@@ -34,4 +34,5 @@ The code should also be compatible with later versions of these packages.
 If you use this code in your research, please consider citing our upcoming article (reference will be added once published).
 
 ## License
-This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/) - see the [LICENSE](LICENSE) file for details.
+
