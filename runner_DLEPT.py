@@ -1,5 +1,5 @@
 import torch
-from models_module import NetworkModule
+from models.models_module import NetworkModule
 import pytorch_lightning as pl
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers import TensorBoardLogger
