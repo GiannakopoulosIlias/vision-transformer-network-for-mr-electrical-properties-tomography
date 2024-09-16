@@ -16,9 +16,9 @@ import torchvision.utils as vutils
 from tqdm import tqdm as _tqdm
 import matplotlib.pyplot as plt
 
-from dataset_handler import CustomDataset, CustomDataset_Test
-from models import Unet3D, Unet3D_ViT, Unet3D_FiLM, Unet3D_ViT, Unet3D_ViT_FiLM, FiLMGeneratorModel
-from losses import MSE_loss, L1_loss, SSIM_loss
+from datasets.dataset_handler import CustomDataset, CustomDataset_Test
+from models.models import Unet3D, Unet3D_ViT, Unet3D_FiLM, Unet3D_ViT, Unet3D_ViT_FiLM, FiLMGeneratorModel
+from utils.losses import MSE_loss, L1_loss, SSIM_loss
 
 class NetworkModule(pl.LightningModule):
     def __init__(self, in_chans=2, out_chans=2, chans=32, num_pool_layers=4, drop_prob=0.2, lr=0.001, epochs = 100, div_factor = 100, final_div_factor = 1000, weight_decay=0.0, data_path='', OOD_str=None, fine_tune_str=None, num_heads=None, num_layers=None, num_patches=None, norm_er = 120, norm_se = 2.5, architecture = 'TransUNet', normalization = 'FiLM', cascades = 3):
