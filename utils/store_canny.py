@@ -2,7 +2,7 @@ import os
 import torch
 import numpy as np
 import h5py
-from edge_detector import CannyFilter3D
+from utils.edge_detector import CannyFilter3D
 
 # Define the base paths and folder names
 base_data_path = '../dev/mylabspace/Ilias/GMT_data/data/Fast_EPR_Data/Simulated_Dataset/Birdcage_Coil_3T_3D/data/'
