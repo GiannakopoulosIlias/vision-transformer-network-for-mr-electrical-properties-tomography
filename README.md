@@ -60,8 +60,11 @@ Your root directory should be organized as follows:
       - ...
   - logs   
 
+## Modular Code
+The repo includes modular code for the 3D UNet and 3D TransUNet architectures. Feel free to use them in your project.
+
 ## Reference
-If you use this code in your research, please consider citing our upcoming article (reference will be added once published).
+If you use this code in full or in part in your research, please consider citing our upcoming article (reference will be added once published).
 
 ## License
 This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/) - see the [LICENSE](LICENSE) file for details.
