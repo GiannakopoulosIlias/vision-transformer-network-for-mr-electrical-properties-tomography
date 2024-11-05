@@ -65,12 +65,19 @@ The repo includes modular code for various architectures, such as 3D UNet, 3D Tr
 
 ## Reference
 If you use this code in full or in part in your research, please consider citing our Early Access article:
+
 @article{giannakopoulos2024mr,
+
   title={MR electrical properties mapping using vision transformers and canny edge detectors},
+  
   author={Giannakopoulos, Ilias I and Carluccio, Giuseppe and Keerthivasan, Mahesh B and Koerzdoerfer, Gregor and Lakshmanan, Karthik and De Moura, Hector L and Cruz Serrall{\'e}s, Jos{\'e} E and Lattanzi, Riccardo},
+  
   journal={Magnetic Resonance in Medicine},
+  
   year={2024},
+  
   publisher={Wiley Online Library}
+  
 }
 
 ## License
