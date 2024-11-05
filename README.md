@@ -76,6 +76,7 @@ If you use this work, please cite it as follows:
   year        = {2024},
   publisher   = {Wiley Online Library}
 }
+```
 
 ## License
 This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/) - see the [LICENSE](LICENSE) file for details.
