@@ -64,20 +64,17 @@ Your root directory should be organized as follows:
 The repo includes modular code for various architectures, such as 3D UNet, 3D TransUNet, FiLM layers etc. You can use them in your project.
 
 ## Reference
-If you use this code in full or in part in your research, please consider citing our Early Access article:
+If you use this work, please cite it as follows:
 
+```bibtex
 @article{giannakopoulos2024mr,
-
-  title={MR electrical properties mapping using vision transformers and canny edge detectors},
-  
-  author={Giannakopoulos, Ilias I and Carluccio, Giuseppe and Keerthivasan, Mahesh B and Koerzdoerfer, Gregor and Lakshmanan, Karthik and De Moura, Hector L and Cruz Serrall{\'e}s, Jos{\'e} E and Lattanzi, Riccardo},
-  
-  journal={Magnetic Resonance in Medicine},
-  
-  year={2024},
-  
-  publisher={Wiley Online Library}
-  
+  title       = {MR electrical properties mapping using vision transformers and canny edge detectors},
+  author      = {Giannakopoulos, Ilias I and Carluccio, Giuseppe and Keerthivasan, Mahesh B and 
+                 Koerzdoerfer, Gregor and Lakshmanan, Karthik and De Moura, Hector L and 
+                 Cruz Serrall{\'e}s, Jos{\'e} E and Lattanzi, Riccardo},
+  journal     = {Magnetic Resonance in Medicine},
+  year        = {2024},
+  publisher   = {Wiley Online Library}
 }
 
 ## License
