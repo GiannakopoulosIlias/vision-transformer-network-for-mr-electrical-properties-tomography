@@ -26,7 +26,7 @@ for folder in folders:
         c += 1
         with h5py.File(os.path.join(data_path, data_file), 'r') as f:
             se = f['se'][:]
-            edges = canny(torch.tensor(se)/2.5)
+            edges = canny(torch.tensor(se))
         storage_path = os.path.join(canny_path, data_file)
         with h5py.File(storage_path, 'w') as hf:
             hf.create_dataset("edges", data=np.array(edges))
