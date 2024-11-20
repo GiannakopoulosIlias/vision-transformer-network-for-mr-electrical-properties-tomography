@@ -44,7 +44,7 @@ class NetworkModule(pl.LightningModule):
         self.architecture = architecture
         self.normalization = normalization
         self.cascades = cascades
-        """
+        
         self.unets = nn.ModuleList()
 
         for i in range(self.cascades):
@@ -62,12 +62,7 @@ class NetworkModule(pl.LightningModule):
                     unet = Unet3D_ViT(in_chans=in_chans,out_chans=out_chans,chans=self.chans,num_pool_layers=self.num_pool_layers,num_heads=self.num_heads,num_layers=self.num_layers,num_patches=self.num_patches,drop_prob=self.drop_prob)
             self.unets.append(unet)
 
-        """
-        self.unet1 = Unet3D_ViT_FiLM(in_chans=self.in_chans,out_chans=self.chans,chans=self.chans,num_pool_layers=self.num_pool_layers,num_heads=self.num_heads,num_layers=self.num_layers,num_patches=self.num_patches,drop_prob=self.drop_prob)
-        self.unet2 = Unet3D_ViT_FiLM(in_chans=self.chans,out_chans=self.chans,chans=self.chans,num_pool_layers=self.num_pool_layers,num_heads=self.num_heads,num_layers=self.num_layers,num_patches=self.num_patches,drop_prob=self.drop_prob)
-        self.unet3 = Unet3D_ViT_FiLM(in_chans=self.chans,out_chans=self.out_chans,chans=self.chans,num_pool_layers=self.num_pool_layers,num_heads=self.num_heads,num_layers=self.num_layers,num_patches=self.num_patches,drop_prob=self.drop_prob)
-
-
+        
         if self.fine_tune_str == '_fine_tune':
             if self.architecture == 'UNet':
                 unet_fine_tune = Unet3D(in_chans=self.out_chans,out_chans=self.out_chans,chans=self.chans,num_pool_layers=self.num_pool_layers,drop_prob=self.drop_prob)
@@ -94,7 +89,7 @@ class NetworkModule(pl.LightningModule):
         self.loss_ssim = SSIM_loss()
 
     def forward(self, x):
-        """
+        
         u = x.to(self.device)
         if self.normalization == 'FiLM':
             [beta, gamma] = self.film_generator(x[:, 2, :, :, :].unsqueeze(1))
@@ -109,19 +104,7 @@ class NetworkModule(pl.LightningModule):
             for i, unet in enumerate(self.unets):
                 u = unet(u)
         return u
-        """
-        [beta, gamma] = self.film_generator(x[:,2,:,:,:].unsqueeze(1))
-        b1 = torch.squeeze(beta[0,:])
-        g1 = torch.squeeze(gamma[0,:])
-        b2 = torch.squeeze(beta[1,:])
-        g2 = torch.squeeze(gamma[1,:])
-        b3 = torch.squeeze(beta[2,:])
-        g3 = torch.squeeze(gamma[2,:])
-        u1 = self.unet1(x,b1,g1)
-        u2 = self.unet2(u1,b2,g2)
-        u3 = self.unet3(u2,b3,g3)
-        return u3
-
+        
     def training_step(self, batch, batch_idx):
         x, y, filenames = batch
         y_hat = self(x)
