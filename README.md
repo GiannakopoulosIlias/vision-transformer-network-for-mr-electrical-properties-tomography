@@ -10,6 +10,28 @@ conda install pytorch==1.12.1 torchaudio==0.12.1 torchmetrics==0.10.0 torchvisio
 
 The code should also be compatible with later versions of these packages.
 
+## Dataset and Pretrained Weights
+
+The dataset used for training and evaluation in this project is **fully simulated** and publicly available on **Zenodo**:
+
+**Download the dataset**: [Download link coming soon]  
+Dataset details: [https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.30338](https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.30338)
+
+Each `.h5` file in the `train`, `val`, and `test` folders contains the following 3D tensors:
+- `er`: Relative Permittivity Distribution  
+- `se`: Electric Conductivity Distribution  
+- `mag_b1p`: Magnitude of the Transmit Field  
+- `tpa_b1p`: Transceive Phase  
+
+Each `.h5` file in the `canny_train`, `canny_val`, and `canny_test` folders contains:
+- `edges`: 3D Binary Edge Mask generated from Canny edge detection on the conductivity maps
+
+**Pretrained model weights** are available here: [Download link coming soon]
+
+## ⚠️ Disclaimer
+
+This dataset is **entirely simulated** and intended for research purposes only. While every effort has been made to ensure its quality, it may contain artifacts or bugs. The authors assume no responsibility for any errors or issues resulting from its use. Users are encouraged to validate results independently.
+
 ## Usage
 - To train, fine-tune, or test the neural network, run the script `runner_DLEPT.py`.  
   python runner_DLEPT.py  
@@ -24,11 +46,6 @@ The code should also be compatible with later versions of these packages.
 - `edge_detector.py`: A custom Canny filter implementation for generating 3D edge masks.
 - `store_canny.py`: Calls `canny_class.py` to generate edge masks for a specified directory.
 - `dataset_handler.py`: Creates training, validation, and test datasets from two `.h5` files. It expects the following 3D tensors from the first file: `'mag_b1p'`, `'tpa_b1p'`, `'er'`, `'se'`, and `'edges'` from the second. All tensors must have the same dimensions and be real.
-  - `'mag_b1p'`: B1+ magnitude
-  - `'tpa_b1p'`: Transceive phase
-  - `'er'`: Relative permittivity
-  - `'se'`: Conductivity
-  - `'edges'`: Canny edge masks
 
 ## Root Directory
 Your root directory should be organized as follows:
