@@ -2,7 +2,7 @@
 
 This project provides a 3D vision transformer-based neural network originally designed to reconstruct the electrical properties of tissues and materials from magnetic resonance (MR) measurements.
 
-👉 [Jump to Graphical Abstract](#-graphical-abstract)
+👉 [Jump to Graphical Abstract](#graphical-abstract)
 
 ---
 
