@@ -24,7 +24,7 @@ The code should also be compatible with later versions of these packages.
 
 The dataset used for training and evaluation in this project is **fully simulated** and publicly available on **Zenodo**:
 
-- **Download the dataset**: [Download link coming soon]  
+- **Download the dataset**: [[Download link coming soon](https://zenodo.org/records/15258256)]  
 - **Dataset details**: [https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.30338](https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.30338)
 
 Each `.h5` file in the `train`, `val`, and `test` folders contains the following 3D tensors:
@@ -36,7 +36,7 @@ Each `.h5` file in the `train`, `val`, and `test` folders contains the following
 Each `.h5` file in the `canny_train`, `canny_val`, and `canny_test` folders contains:
 - `edges`: 3D Binary Edge Mask generated from Canny edge detection on the conductivity maps
 
-**Pretrained model weights** are available here: [Download link coming soon]
+**Pretrained model weights** are available here: [[Download link coming soon](https://zenodo.org/records/15258256)]
 
 ---
 
