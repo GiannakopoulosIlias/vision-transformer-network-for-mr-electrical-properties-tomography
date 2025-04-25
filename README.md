@@ -36,6 +36,11 @@ Each `.h5` file in the `train`, `val`, and `test` folders contains the following
 Each `.h5` file in the `canny_train`, `canny_val`, and `canny_test` folders contains:
 - `edges`: 3D Binary Edge Mask generated from Canny edge detection on the conductivity maps
 
+The dataset is splitted to 
+- 8065 (train) 3D volumes
+- 1463 (val) 3D volumes
+- 632 (test) 3D volumes 
+
 **Pretrained model weights** are available here: [Download from Zenodo](https://zenodo.org/records/15258256)
 
 ---
